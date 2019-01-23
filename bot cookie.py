@@ -11,9 +11,7 @@ client = commands.Bot (command_prefix = "!")
 chat_filter = ["KANKER", "KUT", "KK", "KKR", "TYFUS", "TERING"]
 bypass_list = [] 
 
-@client.event
-async def on_ready():
-    print ("je bot staat aan!!!!")
+
 
 
 
@@ -42,6 +40,8 @@ async def on_message(message):
                 await client.delete_message(message)
                 await client.send_message(message.channel, "**ho, ho, doe a.u.b. een beetje rustig**")
          
-         
+@client.event
+async def on_ready():
+    print ("je bot staat aan!!!!")        
 
 client.run(os.getenv('TOKEN'))
